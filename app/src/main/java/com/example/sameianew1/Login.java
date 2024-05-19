@@ -12,30 +12,32 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
-     private EditText idnum1;
-     private EditText password;
-     private TextView create ;
-     private Button loginb ;
+     private EditText idnumsignET;
+     private EditText passwordET;
+     private TextView createTV ;
+     private Button loginBTN ;
+
       private SharedPreferences sp ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        password = findViewById(R.id.password);
-        idnum1 = findViewById(R.id.id1);
-        create = findViewById(R.id.newaccount);
-        loginb = findViewById(R.id.loginb);
-        String idlog = idnum1.getText().toString();
-        String passlog = password.getText().toString();
+        passwordET = findViewById(R.id.password_login);
+        idnumsignET = findViewById(R.id.id_login);
+        createTV = findViewById(R.id.newaccount_signin);
+        loginBTN = findViewById(R.id.login_btn);
+        String idlog = idnumsignET.getText().toString();
+        String passlog = passwordET.getText().toString();
         sp = getSharedPreferences("userpref", Context.MODE_PRIVATE);
-        create.setOnClickListener(new View.OnClickListener() {
+        createTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this,Signup.class);
+
             }
         });
 
-        loginb.setOnClickListener(new View.OnClickListener() {
+        loginBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sp.edit();

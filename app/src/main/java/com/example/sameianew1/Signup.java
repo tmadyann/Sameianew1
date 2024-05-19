@@ -1,6 +1,5 @@
 package com.example.sameianew1;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,12 +13,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Signup extends AppCompatActivity {
-    private EditText idnumber ;
-    private EditText username ;
-    private EditText passowrd ;
-    private EditText passowrdcon ;
-    private EditText phonenum;
-    private Button createaccount ;
+    private EditText idNumET ;
+    private EditText companyNameET ;
+    private EditText passowrdET ;
+    private EditText passowrdConET ;
+    private EditText phoneNumET;
+    private Button createAccountBTN ;
     FirebaseDatabase database;
     DatabaseReference refernce ;
 
@@ -27,35 +26,34 @@ public class Signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        idnumber = findViewById(R.id.idnum);
-        username=findViewById(R.id.username);
-        passowrd = findViewById(R.id.password);
-        passowrdcon = findViewById(R.id.password2);
-        phonenum = findViewById(R.id.phonenum);
-        createaccount = findViewById(R.id.createaccount);
+        idNumET = findViewById(R.id.id_num_signup);
+        companyNameET=findViewById(R.id.companyName_signup);
+        passowrdET = findViewById(R.id.password_signup);
+        passowrdConET = findViewById(R.id.passwordcon_signup);
+        phoneNumET = findViewById(R.id.phone_num_signup);
+        createAccountBTN= findViewById(R.id.createaccount_signup);
 
-      createaccount.setOnClickListener(new View.OnClickListener() {
+      createAccountBTN.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
               database = FirebaseDatabase.getInstance();
               refernce = database.getReference("users");
-             String idnumbert=  idnumber.getText().toString();
-             String usernamet = username.getText().toString();
-             String passowrdt = passowrd.getText().toString();
-             String passwordcont = passowrdcon.getText().toString();
-             String phonenumt = phonenum.getText().toString();
+             String idnumbert=  idNumET.getText().toString();
+             String companyNamet = companyNameET.getText().toString();
+             String passowrdt = passowrdET.getText().toString();
+             String passwordcont = passowrdConET.getText().toString();
+             String phonenumt = phoneNumET.getText().toString();
              if(!passowrdt.equals(passwordcont)) {
-                 Toast toast = Toast.makeText(Signup.this,"סיסמאות לא תואמות", 5);
-                 toast.show();
+                 Toast.makeText(Signup.this,"סיסמאות לא תואמות",Toast.LENGTH_LONG).show();
              }
-              User user = new User(usernamet,phonenumt,passowrdt,idnumbert);
-             refernce.child(usernamet).setValue(user);
+              CompanyUser CompanyUser = new CompanyUser(companyNamet,phonenumt,passowrdt,0,idnumbert);
+             refernce.child(companyNamet).setValue(CompanyUser);
               Intent intent = new Intent(Signup.this,Login.class);
-              int id = Integer.parseInt(idnumbert);
-              int passw = Integer.parseInt(passowrdt);
-              intent.putExtra("idnumber",id);
-              intent.putExtra("pass",passw);
-              sta
+              int idforsignin = Integer.parseInt(idnumbert);
+              int passforsignin = Integer.parseInt(passowrdt);
+              intent.putExtra("idnumber",idforsignin);
+              intent.putExtra("pass",passforsignin);
+               startActivity(intent);
           }
       });
 

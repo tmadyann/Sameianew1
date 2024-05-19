@@ -16,61 +16,57 @@
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:text="יצירת חשבון"
-        ></TextView>
+        android:text="יצירת חשבון"/>
     <EditText
         android:layout_marginTop="10dp"
-        android:id="@+id/idnum"
+        android:id="@+id/id_num_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="תעודת זהות"
         android:inputType="number"
         android:textColorHint="@color/black"
-        android:textSize="20dp"></EditText>
+        android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/phonenum"
+        android:id="@+id/phone_num_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
         android:inputType="phone"
         android:text="מספר טלפון"
-        android:textSize="20dp"></EditText>
+        android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/companyName_signup"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
         android:textSize="20dp"
         android:text="שם החברה"
-        android:inputType="text"
-        ></EditText>
+        android:inputType="text"/>
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/password_signup"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
         android:textSize="20dp"
         android:text="סיסמה"
-        android:inputType="phone"
-        ></EditText>
+        android:inputType="phone"/>
     <EditText
-        android:id="@+id/password2"
+        android:id="@+id/passwordcon_signup"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
         android:textSize="20dp"
         android:text="אימות סיסמה"
-        android:inputType="phone"
-        ></EditText>
+        android:inputType="phone"/>
     <Button
         android:layout_marginTop="30dp"
-        android:id="@+id/createaccount"
+        android:id="@+id/createaccount_signup"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
@@ -79,5 +75,6 @@
         android:textColor="@color/black"
 
         android:backgroundTint="@color/white"
-        android:text="יצירת חשבון"></Button>
+        android:text="יצירת חשבון"/>
+
 </LinearLayout>
