@@ -17,16 +17,88 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:text="יצירת חשבון"/>
+
+
+
+        <RadioGroup
+            android:id="@+id/radio_group_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/client_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:padding="4dp"
+                android:text="קלינט"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="match_parent"/>
+
+            <RadioButton
+                android:id="@+id/company_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="חברה"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+
     <EditText
         android:layout_marginTop="10dp"
-        android:id="@+id/id_num_signup"
+        android:id="@+id/firstName_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="תעודת זהות"
+        android:hint="שם פרטי"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/lastName_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="שם משפחה"
         android:inputType="number"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
 
+    <EditText
+        android:id="@+id/id_num_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="תעודת זהות"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        android:textSize="20dp" />
+    <EditText
+        android:id="@+id/companyName_signup"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:textSize="20dp"
+        android:hint="שם החברה"
+        android:visibility="gone"
+        android:inputType="text"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/userName_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="שם משתמש"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"/>
     <EditText
         android:id="@+id/phone_num_signup"
         android:layout_width="match_parent"
@@ -35,35 +107,38 @@
         android:gravity="right"
         android:inputType="phone"
         android:text="מספר טלפון"
-        android:textSize="20dp"/>
-
+        android:textSize="20dp" />
     <EditText
-        android:id="@+id/companyName_signup"
-        android:layout_marginTop="10dp"
+        android:id="@+id/city_name_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="right"
-        android:textSize="20dp"
-        android:text="שם החברה"
-        android:inputType="text"/>
+        android:inputType="phone"
+        android:text="ישוב"
+        android:textSize="20dp" />
     <EditText
         android:id="@+id/password_signup"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="right"
-        android:textSize="20dp"
+        android:inputType="phone"
         android:text="סיסמה"
-        android:inputType="phone"/>
+        android:textSize="20dp" />
+
     <EditText
         android:id="@+id/passwordcon_signup"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="right"
-        android:textSize="20dp"
+        android:inputType="phone"
         android:text="אימות סיסמה"
-        android:inputType="phone"/>
+        android:textSize="20dp" />
+
+
+
     <Button
         android:layout_marginTop="30dp"
         android:id="@+id/createaccount_signup"
