@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="שם פרטי"
-        android:inputType="number"
+        android:inputType="text"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
     <EditText
@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="שם משפחה"
-        android:inputType="number"
+        android:inputType="text"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
 
@@ -96,7 +96,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="שם משתמש"
-        android:inputType="number"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
     <EditText
@@ -106,7 +105,7 @@
         android:layout_marginTop="10dp"
         android:gravity="right"
         android:inputType="phone"
-        android:text="מספר טלפון"
+        android:hint="מספר טלפון"
         android:textSize="20dp" />
     <EditText
         android:id="@+id/city_name_signup"
@@ -114,8 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
-        android:inputType="phone"
-        android:text="ישוב"
+        android:hint="ישוב"
         android:textSize="20dp" />
     <EditText
         android:id="@+id/password_signup"
@@ -123,8 +121,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
-        android:inputType="phone"
-        android:text="סיסמה"
+        android:inputType="textPassword"
+        android:hint="סיסמה"
         android:textSize="20dp" />
 
     <EditText
@@ -133,8 +131,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
-        android:inputType="phone"
-        android:text="אימות סיסמה"
+        android:inputType="textPassword"
+        android:hint="אימות סיסמה"
         android:textSize="20dp" />
 
 
