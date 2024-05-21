@@ -77,6 +77,7 @@ public class Login extends AppCompatActivity {
                                     String pwd = passwordET.getText().toString();
                                     if (pwd.equals(user.getPassword())) {
                                             editor.putString("type",userType);
+                                            editor.commit();
                                             if( userType.equals("T0")) {
                                                 Intent intent = new Intent(Login.this,PersonalActivity.class);
                                                 startActivity(intent);
