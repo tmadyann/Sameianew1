@@ -36,6 +36,10 @@
                 android:checked="true"
                 android:padding="4dp"
                 android:text="קלינט"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:buttonTint="@color/black"
+
                 android:textSize="20sp" />
 
             <Space
@@ -48,6 +52,8 @@
                 android:layout_height="wrap_content"
                 android:padding="4dp"
                 android:text="חברה"
+                android:textStyle="bold"
+                android:buttonTint="@color/black"
                 android:textSize="20sp" />
         </RadioGroup>
 
@@ -58,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="שם פרטי"
-        android:inputType="text"
+        android:inputType="textPersonName"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
     <EditText
@@ -67,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="שם משפחה"
-        android:inputType="text"
+        android:inputType="textPersonName"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
 
@@ -96,6 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="שם משתמש"
+        android:inputType="text"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
     <EditText
@@ -104,6 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
+        android:textColorHint="@color/black"
         android:inputType="phone"
         android:hint="מספר טלפון"
         android:textSize="20dp" />
@@ -113,7 +121,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
+        android:inputType="textPersonName"
         android:hint="ישוב"
+        android:textColorHint="@color/black"
         android:textSize="20dp" />
     <EditText
         android:id="@+id/password_signup"
@@ -122,6 +132,7 @@
         android:layout_marginTop="10dp"
         android:gravity="right"
         android:inputType="textPassword"
+        android:textColorHint="@color/black"
         android:hint="סיסמה"
         android:textSize="20dp" />
 
@@ -131,6 +142,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
+        android:textColorHint="@color/black"
         android:inputType="textPassword"
         android:hint="אימות סיסמה"
         android:textSize="20dp" />

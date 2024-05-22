@@ -1,5 +1,7 @@
 package com.example.sameianew1;
 
+import android.widget.Toast;
+
 public class ValidateInput {
     /*
 
@@ -9,3 +11,4 @@ public class ValidateInput {
     }
 
 }
+
