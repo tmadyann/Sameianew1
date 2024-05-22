@@ -85,13 +85,14 @@ public class Signup extends AppCompatActivity {
                 String firstName = firstNameET.getText().toString();
                 String lastName = lastNameET.getText().toString();
                 String id = idNumET.getText().toString();
-                boolean allValid = true;
+                boolean allValid = false;
                 User user = null;
-                boolean tr = true;
-                while (tr) {
-
+                boolean tr = false;
+                int i = 0;
+                while (!tr&&i>0) {
+                     i=0;
                     if (informitionisempty(passowd))
-                        Toast.makeText(Signup.this, "נא למלא את השדה ~סיסמה~!", Toast.LENGTH_LONG).show();
+                        passowrdET.setError("נא למלא את השדה ~סיסמה~!");
                     if (informitionisempty(passowrdCon))
                         Toast.makeText(Signup.this, "נא למלא את השדה ~אימות סיסמה~!", Toast.LENGTH_LONG).show();
                     if (informitionisempty(phonenum))
@@ -104,30 +105,44 @@ public class Signup extends AppCompatActivity {
                         Toast.makeText(Signup.this, "נא למלא את השדה ~שם משפחה~!", Toast.LENGTH_LONG).show();
                     if (informitionisempty(userName))
                         Toast.makeText(Signup.this, "נא למלא את השדה ~שם משתמש~!", Toast.LENGTH_LONG).show();
-                    //the name of 3mleia is false
-                    if (informitionisempty(passowd))
-                        tr = false;
-                    if (informitionisempty(passowrdCon))
-                        tr = false;
-                    if (informitionisempty(phonenum))
-                        tr = false;
-                    if (informitionisempty(city))
-                        tr = false;
-                    if (informitionisempty(firstName))
-                        tr = false;
-                    if (informitionisempty(lastName))
-                        tr = false;
-                    if (informitionisempty(userName))
-                        tr = false;
+                    if (!informitionisempty(passowd))
+                        tr = true;
+                        else i++;
+                    if (!informitionisempty(passowrdCon))
+                        tr = true;
+                    else i++;
+                    if (!informitionisempty(phonenum))
+                        tr = true;
+                    else i++;
+                    if (!informitionisempty(city))
+                        tr = true;
+                    else i++;
+                    if (!informitionisempty(firstName))
+                        tr = true;
+                    else i++;
+                    if (!informitionisempty(lastName))
+                        tr = true;
+                    else i++;
+                    if (!informitionisempty(userName))
+                        tr = true;
+                    else i++;
 
                 }
+                allValid = false;
                 while (!allValid) {
                     if (!isusernametrue(userName)) {
                         Toast.makeText(Signup.this, "שם משתמש חייב להתחיל באות אנגלית", Toast.LENGTH_LONG).show();
                         allValid = false;
                     } else allValid = true;
                 }
-
+                allValid = false;
+                while (!allValid){
+                    if(!longusername(userName)){
+                        Toast.makeText(Signup.this, "שם משתמש ארוך יותר מדי", Toast.LENGTH_LONG).show();
+                    }
+                    else allValid = true;;
+                }
+                allValid = false;
 
                 while (!allValid) {
                     if (!passcheck(passowd, passowrdCon)) {
@@ -135,18 +150,21 @@ public class Signup extends AppCompatActivity {
                         allValid = false;
                     } else allValid = true;
                 }
+                allValid = false;
                 while (!allValid) {
                     if (isidtrue(id)) {
                         Toast.makeText(Signup.this, "נא להקיש מספר תעודת זהות בן 9 מספרים", Toast.LENGTH_LONG).show();
                         allValid = false;
                     } else allValid = true;
                 }
+                allValid = false;
                 while (!allValid){
-                    if(!longusername(userName)){
-                        Toast.makeText(Signup.this, "שם משתמש ארוך יותר מדי", Toast.LENGTH_LONG).show();
-                    }
-                    else allValid = true;;
+                    if(!cityinput(city))
+                        allValid = false;
+                    else allValid=true;
                 }
+
+
 
                 Intent intent = new Intent();
                 intent.putExtra("type", type);
@@ -226,5 +244,16 @@ public class Signup extends AppCompatActivity {
         if (user.length()<10)
             tr =false;
         return tr;
+    }
+    public static boolean cityinput(String city){
+        boolean flag=true;
+        for(int i=0;i<city.length()&&flag;i++){
+            char ch=city.charAt(i);
+            if(ch>'ת'|| ch<'א'){
+                flag =false;
+
+            }
+        }
+        return flag;
     }
 }

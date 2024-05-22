@@ -14,6 +14,7 @@
       android:textSize="30dp"
       android:layout_width="wrap_content"
       android:textStyle="bold"
+      android:textColor="@color/black"
       android:layout_height="wrap_content"
       android:text="תודה שבחרתם אותנו"/>
     <EditText
@@ -42,6 +43,7 @@
       android:layout_height="wrap_content"
       android:gravity="center"
       android:textStyle="bold"
+      android:textColor="@color/black"
       android:textSize="20dp"
       android:text="יצירת חשבון"/>
   <Button
