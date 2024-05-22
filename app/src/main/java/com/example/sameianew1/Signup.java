@@ -146,6 +146,12 @@ public class Signup extends AppCompatActivity {
                         allValid = false;
                     } else allValid = true;
                 }
+                while (!allValid){
+                    if(!longusername(userName)){
+                        Toast.makeText(Signup.this, "שם משתמש ארוך יותר מדי", Toast.LENGTH_LONG).show();
+                    }
+                    else allValid = true;;
+                }
 
                 Intent intent = new Intent();
                 intent.putExtra("type", type);
@@ -163,9 +169,7 @@ public class Signup extends AppCompatActivity {
                     user = new CompanyUser(userName, passowd, phonenum, companyName, city);
                 }
 
-                if (!ValidateInput.isUserNameValid(userName)) {
-                    allValid = false;
-                }
+
 
                 if (allValid) {
                     refernce.child("Users").child(user.getUserName()).setValue(user);
@@ -221,5 +225,11 @@ public class Signup extends AppCompatActivity {
             }
         }return tr;
 
+    }
+    public static boolean longusername(String user){
+        boolean tr = true;
+        if (user.length()<10)
+            tr =false;
+        return tr;
     }
 }
