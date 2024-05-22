@@ -31,12 +31,7 @@ public class Signup extends AppCompatActivity {
     private RadioButton clientRadioBtn;
     FirebaseDatabase database;
     DatabaseReference refernce;
-    private boolean fnv;
-    private boolean lnv;
-    private boolean idv;
-    private boolean cnv;
-    private boolean cinv;
-    private boolean unv;
+
 
 
     @Override
