@@ -8,8 +8,8 @@ public class CompanyUser extends User {
 
     }
 
-    public CompanyUser(String userName, String password, String phoneNumber, String companyName,String city) {
-        super(userName, password, phoneNumber,city);
+    public CompanyUser(String userName, String password, String phoneNumber, String companyName,String city,int userType) {
+        super(userName, password, phoneNumber,city,userType);
         this.companyName = companyName;
     }
 

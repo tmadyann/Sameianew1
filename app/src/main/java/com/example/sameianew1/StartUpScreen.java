@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -29,18 +30,18 @@ public class StartUpScreen extends Activity implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(6000);
+            Thread.sleep(2);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         Intent intent = new Intent();
         SharedPreferences sharedPreferences = getSharedPreferences("data.txt", MODE_PRIVATE);
         String st = sharedPreferences.getString("type", "");
-
+        Log.d("sdfsdfdsf",st);
         if (st.equals("T0"))
             intent = new Intent(StartUpScreen.this, PersonalActivity.class);
         else if (st.equals("T1"))
-            intent = new Intent(StartUpScreen.this, CompanyUser.class);
+            intent = new Intent(StartUpScreen.this, CompanyActivity.class);
         else intent = new Intent(StartUpScreen.this, Login.class);
         startActivity(intent);
 

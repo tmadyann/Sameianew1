@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
     private DatabaseReference dbr;
 
     private SharedPreferences sp;
-    private String userType;
+    private int userType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,20 +55,21 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userName = userNameET.getText().toString();
-                dbr.child("UsersType").child(userName).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                dbr.child("Users").child(userName).child("userType").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
-
+                        // run when completing getting data from fire base ( userType )
                         DataSnapshot ds = task.getResult();
                         if (ds.exists()) {
 
-                            userType = ds.getValue(String.class);
+                            int userType = ds.getValue(Integer.class);
                             dbr.child("Users").child(userName).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    // get user object
                                     DataSnapshot dataSnapshot = task.getResult();
                                     User user = null;
-                                    if (userType.equals("T0")) {
+                                    if (userType == 0) {
                                         user = dataSnapshot.getValue(PersonalUser.class);
                                         Log.d(TAG,user.toString());
                                     } else {
@@ -76,9 +77,10 @@ public class Login extends AppCompatActivity {
                                     }
                                     String pwd = passwordET.getText().toString();
                                     if (pwd.equals(user.getPassword())) {
-                                            editor.putString("type",userType);
+                                            editor.putString("userName",userName);
+                                            editor.putString("type","T"+userType);
                                             editor.commit();
-                                            if( userType.equals("T0")) {
+                                            if( userType==0) {
                                                 Intent intent = new Intent(Login.this,PersonalActivity.class);
                                                 startActivity(intent);
                                             }else{

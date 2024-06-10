@@ -1,6 +1,7 @@
 package com.example.sameianew1;
 
 public abstract class User {
+    private int userType; // 0 client 1 company
     private String userName;
     private String password;
     private String phoneNumber;
@@ -9,11 +10,12 @@ public abstract class User {
     public User() {
     }
 
-    public User(String userName, String password, String phoneNumber,String city) {
+    public User(String userName, String password, String phoneNumber,String city,int userType) {
         this.userName = userName;
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.city = city;
+        this.userType = userType;
     }
 
     public String getUserName() {
@@ -46,5 +48,13 @@ public abstract class User {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public int getUserType() {
+        return userType;
+    }
+
+    public void setUserType(int userType) {
+        this.userType = userType;
     }
 }

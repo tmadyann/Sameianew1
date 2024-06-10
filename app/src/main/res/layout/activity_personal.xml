@@ -5,14 +5,81 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B0DEDA"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".PersonalActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/company_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Company"
+            android:background="#B7C9C7"
+            android:textSize="40dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12"
+            android:fillViewport="true">
+            <ListView
+                android:id="@+id/company_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </ScrollView>
+
+       </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/input_order_cardview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Personal"
-        android:textSize="40dp"/>
+        android:layout_marginLeft="40dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="40dp"
+        app:cardCornerRadius="10dp"
+        android:visibility="gone"
+        app:cardElevation="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/number_of_kubs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Numbers of kubs"
+                android:textSize="30dp"
+                />
+            <EditText
+                android:id="@+id/payment_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:hint="Payment Method"/>
+            <DatePicker
+                android:id="@+id/date_picker_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+            <Button
+                android:id="@+id/order_btn_personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Order"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
 
 </LinearLayout>

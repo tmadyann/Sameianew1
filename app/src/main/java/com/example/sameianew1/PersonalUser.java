@@ -8,8 +8,8 @@ public class PersonalUser extends User{
     public PersonalUser() {
     }
 
-    public PersonalUser(String userName, String password, String phoneNumber, String firstName, String lastName,String id,String city) {
-        super(userName, password, phoneNumber,city);
+    public PersonalUser(String userName, String password, String phoneNumber, String firstName, String lastName,String id,String city,int userType) {
+        super(userName, password, phoneNumber,city,userType);
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
