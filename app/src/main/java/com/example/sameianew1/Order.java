@@ -5,17 +5,37 @@ public class Order {
     private String payMethod;
     private int numOfKubs;
     private String personalUserName;
+    private String  phoneNum;
     private String companyUserName;
+    private String location;
 
     public Order() {
     }
 
-    public Order(String date, String payMethod, int numOfKubs, String userName,String companyUserName) {
+    public Order(String date, String payMethod, int numOfKubs, String personalUserName, String phoneNum, String companyUserName, String location) {
         this.date = date;
         this.payMethod = payMethod;
         this.numOfKubs = numOfKubs;
-        this.personalUserName = userName;
+        this.personalUserName = personalUserName;
+        this.phoneNum = phoneNum;
         this.companyUserName = companyUserName;
+        this.location = location;
+    }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getDate() {

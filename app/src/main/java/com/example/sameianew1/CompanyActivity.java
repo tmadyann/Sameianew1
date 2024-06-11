@@ -45,7 +45,6 @@ public class CompanyActivity extends AppCompatActivity {
         });
         sharedPreferences = getSharedPreferences("data.txt",MODE_PRIVATE);
         userName = sharedPreferences.getString("userName","");
-
         ordersLV = findViewById(R.id.order_list);
         orders = new ArrayList<Order>();
         OrderListAdapter orderListAdapter = new OrderListAdapter(this,R.layout.order_item,orders);
@@ -70,6 +69,7 @@ public class CompanyActivity extends AppCompatActivity {
 
             }
         });
+
 
 //        databaseReference.child("Users").addValueEventListener(new ValueEventListener() {
 //            @Override

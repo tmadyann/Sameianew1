@@ -10,12 +10,13 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
         android:textSize="40dp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="30dp"
         android:text="יצירת חשבון"/>
 
@@ -23,10 +24,9 @@
 
         <RadioGroup
             android:id="@+id/radio_group_signup"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
             android:orientation="horizontal"
             android:gravity="center">
 
@@ -62,17 +62,18 @@
     <EditText
         android:layout_marginTop="10dp"
         android:id="@+id/firstName_signup"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:hint="שם פרטי"
         android:inputType="textPersonName"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
     <EditText
-        android:layout_marginTop="10dp"
         android:id="@+id/lastName_signup"
+        android:layout_weight="1"
+        android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:hint="שם משפחה"
         android:inputType="textPersonName"
         android:textColorHint="@color/black"
@@ -80,8 +81,9 @@
 
     <EditText
         android:id="@+id/id_num_signup"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:hint="תעודת זהות"
         android:inputType="number"
@@ -90,8 +92,9 @@
     <EditText
         android:id="@+id/companyName_signup"
         android:layout_marginTop="10dp"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:gravity="right"
         android:textSize="20dp"
         android:hint="שם החברה"
@@ -100,16 +103,18 @@
     <EditText
         android:layout_marginTop="10dp"
         android:id="@+id/userName_signup"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:hint="שם משתמש"
         android:inputType="text"
         android:textColorHint="@color/black"
         android:textSize="20dp"/>
     <EditText
         android:id="@+id/phone_num_signup"
+        android:layout_weight="1"
+        android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
         android:textColorHint="@color/black"
@@ -119,8 +124,9 @@
 
     <EditText
         android:id="@+id/city_name_signup"
+      android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:gravity="right"
         android:inputType="text"
@@ -129,8 +135,9 @@
         android:textSize="20dp" />
     <EditText
         android:id="@+id/password_signup"
+        android:layout_weight="1"
+        android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
         android:inputType="textPassword"
@@ -140,8 +147,9 @@
 
     <EditText
         android:id="@+id/passwordcon_signup"
+        android:layout_weight="1"
+        android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="right"
         android:textColorHint="@color/black"
@@ -154,9 +162,10 @@
     <Button
         android:layout_marginTop="20dp"
         android:id="@+id/createaccount_signup"
-        android:layout_width="wrap_content"
         android:layout_gravity="center"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
         android:textSize="30dp"
         android:textStyle="bold"
         android:textColor="@color/black"

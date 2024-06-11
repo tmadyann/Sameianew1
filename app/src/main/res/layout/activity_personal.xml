@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B0DEDA"
     android:orientation="vertical"
     tools:context=".PersonalActivity">
     <FrameLayout
@@ -20,14 +19,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Company"
-            android:background="#B7C9C7"
-            android:textSize="40dp"/>
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="חברות מומלצות בעבורך"
+            android:background="@color/white"
+            android:textSize="30dp"/>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="12"
+            android:background="@color/white"
             android:fillViewport="true">
             <ListView
                 android:id="@+id/company_list"
@@ -51,20 +53,84 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+
             android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="קובים"
+                android:textSize="30dp"/>
+
             <EditText
                 android:id="@+id/number_of_kubs"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Numbers of kubs"
-                android:textSize="30dp"
+                android:inputType="number"
+                android:textStyle="bold"
+                android:textSize="20dp"
                 />
-            <EditText
-                android:id="@+id/payment_method"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:hint="Payment Method"/>
+             <TextView
+                 android:layout_gravity="center"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="20dp"
+                 android:text="תשלום :"></TextView>
+
+            <RadioGroup
+                android:id="@+id/radio_group_payment"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/visa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:scrollbarSize="10dp"
+                    android:padding="4dp"
+                    android:text="אשראי"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/black"
+
+                    android:textSize="20sp" />
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"/>
+
+                <RadioButton
+                    android:id="@+id/cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="מזומן"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/black"
+                    android:textSize="20sp" />
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"/>
+
+                <RadioButton
+                    android:id="@+id/cheque"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="צ'ק"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/black"
+                    android:textSize="20sp" />
+            </RadioGroup>
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="תאריך"
+                 android:textSize="30dp"/>
             <DatePicker
                 android:id="@+id/date_picker_actions"
                 android:layout_width="match_parent"
@@ -72,11 +138,19 @@
                 android:datePickerMode="spinner"
                 android:calendarViewShown="false"/>
             <Button
+                android:layout_marginTop="20dp"
                 android:id="@+id/order_btn_personal"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_height="0dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Order"/>
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+
+                android:backgroundTint="@color/black"
+                android:text="הזמנה"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

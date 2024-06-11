@@ -16,11 +16,15 @@ import java.util.Map;
 public class OrderListAdapter extends ArrayAdapter<Order> {
     private Context context;
     private int resource;
+    private List<Order> orders;
+
+
 
     public OrderListAdapter(@NonNull Context context, int resource, @NonNull List<Order> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
+
 
     }
 
@@ -31,12 +35,19 @@ public class OrderListAdapter extends ArrayAdapter<Order> {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         if( convertView == null )
             convertView = layoutInflater.inflate(resource,parent,false);
-        TextView companyNameTV = convertView.findViewById(R.id.company_name_tv_orders);
+        TextView clientnameTV = convertView.findViewById(R.id.client_name);
         TextView numbersOfKubsTV = convertView.findViewById(R.id.number_of_kubs_orders);
+        TextView  phoneNumberTV= convertView.findViewById(R.id.client_phone_num);
+        TextView location = convertView.findViewById(R.id.location);
+        TextView paymentmethodTV = convertView.findViewById(R.id.payment_method);
 
         Order order = getItem(position);
-        companyNameTV.setText(order.getCompanyUserName());
         numbersOfKubsTV.setText( order.getNumOfKubs()+"");
+        clientnameTV.setText( order.getPersonalUserName()+"");
+        location.setText(order.getLocation());
+        phoneNumberTV.setText(order.getPhoneNum());
+        paymentmethodTV.setText(order.getPayMethod());
+
         return convertView;
     }
 }

@@ -31,10 +31,12 @@ public class CompanyListAdapter extends ArrayAdapter<CompanyUser> {
 
         TextView companyNameTV = convertView.findViewById(R.id.company_list_name_tv);
         TextView phoneNumberCompany = convertView.findViewById(R.id.company_list_phone_num_tv);
+        TextView cityCompany = convertView.findViewById(R.id.company_list_city);
 
         CompanyUser companyUser = getItem(position);
         companyNameTV.setText(companyUser.getCompanyName());
         phoneNumberCompany.setText( companyUser.getPhoneNumber());
+        cityCompany.setText(companyUser.getCity());
         return convertView;
     }
 }
